@@ -1,0 +1,65 @@
+<questions>
+  <question time="30" points="3" right="3">
+    <text>Какой цвет был у таблетки, которую принимает Нео в фильме “Матрица”?</text>
+    <variants>
+      <variant>Белый</variant>
+      <variant>Синий</variant>
+      <variant>Красный</variant>
+      <variant>Желтый</variant>
+    </variants>
+  </question>
+  <question time="45" points="5" right="4">
+    <text>Какой национальный вид спорта Канады?</text>
+    <variants>
+      <variant>Футбол</variant>
+      <variant>Хоккей</variant>
+      <variant>Гольф</variant>
+      <variant>Лакросс</variant>
+    </variants>
+  </question>
+  <question time="30" points="3" right="3">
+    <text>Сколько было пилотируемых высадок на Луну? (ответ - число)</text>
+    <variants>
+      <variant>2</variant>
+      <variant>4</variant>
+      <variant>6</variant>
+      <variant>8</variant>
+    </variants>
+  </question>
+  <question time="60" points="7" right="1">
+    <text>Как зовут домашнюю обезьянку Росса в сериале “Друзья”?</text>
+    <variants>
+      <variant>Марсель</variant>
+      <variant>Джоуи</variant>
+      <variant>Чендлер</variant>
+      <variant>Бен</variant>
+    </variants>
+  </question>
+  <question time="30" points="1" right="2">
+    <text>Когда пала Берлинская стена?</text>
+    <variants>
+      <variant>1988</variant>
+      <variant>1989</variant>
+      <variant>1990</variant>
+      <variant>1991</variant>
+    </variants>
+  </question>
+  <question time="60" points="10" right="1">
+    <text>Как называется маленький пластмассовый кусочек на конце шнурка?</text>
+    <variants>
+      <variant>Аглет</variant>
+      <variant>Кончик</variant>
+      <variant>Штучка</variant>
+      <variant>Никак</variant>
+    </variants>
+  </question>
+  <question time="45" points="5" right="3">
+    <text>Какой город является столицей Австралии?</text>
+    <variants>
+      <variant>Мельбурн</variant>
+      <variant>Сидней</variant>
+      <variant>Канберра</variant>
+      <variant>Брисбен</variant>
+    </variants>
+  </question>
+</questions>
