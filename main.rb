@@ -2,6 +2,7 @@
 
 require "rexml/document"
 require "timeout"
+require_relative "lib/parse_xml"
 require_relative "lib/question"
 require_relative "lib/quiz"
 
@@ -9,12 +10,8 @@ puts "Мини-викторина. Ответьте на вопросы."
 puts
 
 file = File.new("#{__dir__}/data/questions.xml")
-doc = REXML::Document.new(file)
+questions = parse_xml(file)
 file.close
-
-questions = doc.root.elements.map do |question|
-  Question.parse_xml(question)
-end
 
 quiz = Quiz.new(
   questions: questions,
@@ -26,9 +23,7 @@ quiz = Quiz.new(
 quiz.generate.each do |question|
   puts question
   user_answer = -1
-  Timeout::timeout(question.time) {
-    user_answer = STDIN.gets.to_i
-  }
+  Timeout::timeout(question.time) { user_answer = STDIN.gets.to_i }
   if user_answer == question.right_variant_id
     puts quiz.right_answer(question.points)
     puts
@@ -38,6 +33,7 @@ quiz.generate.each do |question|
   end
 rescue Timeout::Error
   puts "Время на ответ вышло! Игра окончена"
+  break
 end
 
 puts quiz.result

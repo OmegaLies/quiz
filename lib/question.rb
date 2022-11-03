@@ -9,16 +9,6 @@ class Question
     @time = params[:time]
   end
 
-  def self.parse_xml(question_xml)
-    new(
-      text: question_xml.elements["text"].text,
-      variants: question_xml.elements["variants"].elements.map(&:text),
-      right_variant_id: question_xml.attributes["right"].to_i,
-      points: question_xml["points"].to_i,
-      time: question_xml["time"].to_i
-    )
-  end
-
   def answer
     @variants[@right_variant_id - 1]
   end
