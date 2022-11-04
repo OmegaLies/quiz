@@ -1,17 +1,14 @@
 # encoding: UTF-8
 
-require "rexml/document"
 require "timeout"
-require_relative "lib/parse_xml"
+require_relative "lib/question_parser"
 require_relative "lib/question"
 require_relative "lib/quiz"
 
 puts "Мини-викторина. Ответьте на вопросы."
 puts
 
-file = File.new("#{__dir__}/data/questions.xml")
-questions = parse_xml(file)
-file.close
+questions = QuestionsParser.from_xml(File.read("#{__dir__}/data/questions.xml"))
 
 quiz = Quiz.new(
   questions: questions,
