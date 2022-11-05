@@ -13,6 +13,10 @@ class Question
     @variants[@right_variant_id - 1]
   end
 
+  def right_answer?(user_answer)
+    user_answer == right_variant_id
+  end
+
   def to_s
     result = @variants.map.with_index(1) { |variants, index| "#{index}. #{variants}" }
     <<~RESULT

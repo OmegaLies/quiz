@@ -10,14 +10,14 @@ class Quiz
     @questions.sample(@number_of_questions)
   end
 
-  def right_answer(points)
-    @answers_count += 1
-    @score += points
-    "Верный ответ!"
-  end
-
-  def wrong_answer(right_answer)
-    "Неверно. Правильный ответ: #{right_answer}"
+  def process_right_answer(question, answer)
+    if question.right_answer?(answer)
+      @answers_count += 1
+      @score += question.points
+      "Верный ответ!"
+    else
+      "Неверно. Правильный ответ: #{question.answer}"
+    end
   end
 
   def result
