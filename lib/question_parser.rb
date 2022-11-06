@@ -1,4 +1,5 @@
 require "rexml/document"
+
 module QuestionsParser
   def self.from_xml(file)
     REXML::Document.new(file).root.elements.map do |question|
@@ -12,5 +13,3 @@ module QuestionsParser
     end
   end
 end
-
-
